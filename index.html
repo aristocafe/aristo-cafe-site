@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aristo Coffee and Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #B85C3E;
+            --terracotta-light: #C67A5B;
+            --terracotta-dark: #9A4A2F;
+            --terracotta-accent: #D4967A;
+            --white: #ffffff;
+            --cream: #FAF7F4;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: url('./1000210697.jpg');
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: url('./1000210699.jpg');
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: url('./1000210700.jpg');
+        }
+
+        .hero-slide:nth-child(4) {
+            background-image: url('./1000210701.jpg');
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(184, 92, 62, 0.1), rgba(154, 74, 47, 0.15));
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+            z-index: 4;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.8rem;
+            line-height: 1.15;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 
+                         0 4px 16px rgba(0, 0, 0, 0.5),
+                         0 8px 32px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1.5px;
+            font-style: normal;
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .highlight {
+            font-family: 'Crimson Pro', serif;
+            color: var(--terracotta-accent);
+            position: relative;
+            font-weight: 800;
+            font-style: italic;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
+                         0 4px 16px rgba(184, 92, 62, 0.4),
+                         0 8px 32px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            transform: rotate(-1deg);
+            animation: highlightGlow 2s ease-in-out 1.5s both;
+        }
+
+        @keyframes highlightGlow {
+            0% {
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
+                             0 4px 16px rgba(184, 92, 62, 0.4),
+                             0 8px 32px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
+                             0 4px 16px rgba(184, 92, 62, 0.6),
+                             0 8px 32px rgba(184, 92, 62, 0.2),
+                             0 0 40px rgba(184, 92, 62, 0.3);
+            }
+            100% {
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
+                             0 4px 16px rgba(184, 92, 62, 0.4),
+                             0 8px 32px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .hero p {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.8rem;
+            max-width: 520px;
+            line-height: 1.75;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7),
+                         0 2px 8px rgba(0, 0, 0, 0.4);
+            font-weight: 400;
+            letter-spacing: 0.8px;
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+        }
+
+        .cta-button {
+            font-family: 'Lato', sans-serif;
+            display: inline-block;
+            background: var(--cream);
+            color: var(--terracotta);
+            padding: 1rem 2.2rem;
+            text-decoration: none;
+            border-radius: 35px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 6px 25px rgba(250, 247, 244, 0.6), 
+                        0 3px 12px rgba(0, 0, 0, 0.2);
+            text-shadow: none;
+            letter-spacing: 0.8px;
+            border: 2px solid var(--terracotta);
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            animation: floatPulse 3s ease-in-out infinite, slideUpBounce 1.2s ease-out 0.9s both;
+        }
+
+        @keyframes floatPulse {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 6px 25px rgba(250, 247, 244, 0.6), 
+                            0 3px 12px rgba(0, 0, 0, 0.2);
+            }
+            25% {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 8px 30px rgba(250, 247, 244, 0.7), 
+                            0 4px 15px rgba(184, 92, 62, 0.2);
+            }
+            50% {
+                transform: translateY(-6px) scale(1.03);
+                box-shadow: 0 10px 35px rgba(250, 247, 244, 0.8), 
+                            0 5px 18px rgba(184, 92, 62, 0.3);
+            }
+            75% {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 8px 30px rgba(250, 247, 244, 0.7), 
+                            0 4px 15px rgba(184, 92, 62, 0.2);
+            }
+        }
+
+        @keyframes slideUpBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.8);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-8px) scale(1.05);
+            }
+            80% {
+                transform: translateY(2px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(184, 92, 62, 0.2), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(184, 92, 62, 0.3), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover::after {
+            width: 120%;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            background: var(--terracotta);
+            color: var(--white);
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 15px 45px rgba(184, 92, 62, 0.6), 
+                        0 8px 25px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--terracotta-light);
+            letter-spacing: 1.2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+
+        .cta-button:active {
+            transform: translateY(-4px) scale(1.05);
+            transition: all 0.1s ease;
+        }
+
+        .hero-image {
+            text-align: center;
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .coffee-cup {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 
+                        0 5px 15px rgba(184, 92, 62, 0.4);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .coffee-cup::before {
+            content: '☕';
+            font-size: 6rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .coffee-cup::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--terracotta-accent), var(--terracotta-light));
+            border-radius: 50%;
+            animation: bounce 1.5s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 60px;
+            height: 3px;
+            background: var(--terracotta);
+            transform: translateX(-50%);
+        }
+
+        /* Menu Categories Styles */
+        .menu-categories {
+            margin-top: 4rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .category-card {
+            position: relative;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(184, 92, 62, 0.3);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(184, 92, 62, 0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .category-card:hover .category-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(184, 92, 62, 0.3));
+        }
+
+        .category-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover .category-title {
+            transform: translateY(0);
+        }
+
+        .category-count {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover .category-count {
+            transform: translateY(0);
+        }
+
+        /* Category Pages Styles */
+        .category-page {
+            margin-top: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .category-page.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .back-button {
+            background: var(--terracotta);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(184, 92, 62, 0.3);
+        }
+
+        .back-button:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 92, 62, 0.4);
+        }
+
+        .category-page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .category-description {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(184, 92, 62, 0.2);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(184, 92, 62, 0.1), rgba(184, 92, 62, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            background: linear-gradient(45deg, rgba(184, 92, 62, 0.05), rgba(184, 92, 62, 0.1));
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+        }
+
+        .contact-item h3 {
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        /* Contact Links */
+        .contact-link {
+            color: var(--terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            color: var(--terracotta-light);
+            border-bottom: 1px solid var(--terracotta-light);
+            transform: translateY(-1px);
+        }
+
+        .contact-link:active {
+            transform: translateY(0);
+            color: var(--terracotta-dark);
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+            }
+
+            .hero-slide {
+                background-attachment: scroll;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+                margin-bottom: 1.5rem;
+                letter-spacing: 1px;
+                line-height: 1.2;
+            }
+
+            .hero .highlight {
+                transform: rotate(-0.5deg);
+                font-size: 3.4rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 2.2rem;
+                letter-spacing: 0.6px;
+                max-width: 100%;
+                line-height: 1.7;
+            }
+
+            .cta-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1rem;
+                letter-spacing: 0.8px;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-2px) scale(1.01);
+                letter-spacing: 1px;
+            }
+
+            .coffee-cup {
+                width: 200px;
+                height: 200px;
+            }
+
+            .coffee-cup::before {
+                font-size: 4rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .category-card {
+                height: 180px;
+            }
+
+            .category-title {
+                font-size: 1.6rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .category-page-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.8rem;
+                letter-spacing: 0.8px;
+            }
+
+            .hero .highlight {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                letter-spacing: 0.4px;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+                letter-spacing: 0.6px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .coffee-cup {
+                width: 200px;
+                height: 200px;
+            }
+
+            .coffee-cup::before {
+                font-size: 4rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .category-card {
+                height: 160px;
+            }
+
+            .category-title {
+                font-size: 1.4rem;
+            }
+
+            .category-page-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Welcome to <span class="highlight">Aristo</span><br>Coffee & Cuisine</h1>
+                <p>quite luxurious and cozy place to enjoy your time with your loved ones</p>
+                <a href="#products" class="cta-button">Explore Our Menu</a>
+            </div>
+            <!-- <div class="hero-image">
+                <div class="coffee-cup"></div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Signature Menu</h2>
+            
+            <!-- Main Menu Categories -->
+            <div id="main-menu" class="menu-categories">
+                <div class="category-grid">
+                    <div class="category-card animate-on-scroll" data-category="mojitos">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Mojitos</h3>
+                            <p class="category-count">8 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="coolers">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Specialty Coolers</h3>
+                            <p class="category-count">4 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="shakes">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Milkshakes</h3>
+                            <p class="category-count">8 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="frappes">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Frappes</h3>
+                            <p class="category-count">10 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="affogatos">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Affogatos</h3>
+                            <p class="category-count">5 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="coldbrew">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Cold Brew</h3>
+                            <p class="category-count">5 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="manual">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Manual Brew</h3>
+                            <p class="category-count">6 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="aquablend">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Aqua Blend</h3>
+                            <p class="category-count">7 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="coldcoffee">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Cold Coffee</h3>
+                            <p class="category-count">7 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="hotcoffee">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Hot Coffee</h3>
+                            <p class="category-count">8 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="hotchocolate">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Hot Chocolate</h3>
+                            <p class="category-count">6 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="matcha">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Matcha Blends</h3>
+                            <p class="category-count">4 Varieties</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card animate-on-scroll" data-category="icedteas">
+                        <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="category-overlay">
+                            <h3 class="category-title">Iced Teas</h3>
+                            <p class="category-count">5 Varieties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Individual Category Pages -->
+            <!-- Mojitos Page -->
+            <div id="mojitos-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Mojitos Collection</h2>
+                    <p class="category-description">Fresh, minty, and perfectly refreshing mocktails</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mint Mojito</h3>
+                            <p class="product-description">Classic fresh mint-infused mojito, a timeless favorite at Aristo.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1622597467836-f3285f2131b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Watermelon Mojito</h3>
+                            <p class="product-description">Cool down with Aristo's juicy watermelon mojito—sweet, refreshing, and vibrant!</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Cranberry Mojito</h3>
+                            <p class="product-description">A tangy twist on the classic, Aristo's cranberry mojito bursts with berry goodness.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Orange Mojito</h3>
+                            <p class="product-description">Zesty and uplifting—our orange mojito brings a citrus sparkle to your day at Aristo Café.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1527661591475-527312dd65f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Green Apple Mojito</h3>
+                            <p class="product-description">Crisp green apple meets mint in this lively and refreshing Aristo special.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Midnight Mojito</h3>
+                            <p class="product-description">A mysterious blend of flavors for a bold, unforgettable sip at Aristo.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Cranberry Espresso Mojito</h3>
+                            <p class="product-description">Energize your taste buds with Aristo's unique cranberry-espresso mojito fusion.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Mojito</h3>
+                            <p class="product-description">Zesty lime, mint, and vibrant matcha—Aristo's energizing, refreshing green cup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shakes Page -->
+            <div id="shakes-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Milkshakes Collection</h2>
+                    <p class="category-description">Served in Beer Mug - Creamy, dreamy, and delicious</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Kit Kat Shake</h3>
+                            <p class="product-description">Crunchy chocolate delight blended into a creamy milkshake—Aristo's Kit Kat cooler.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Ferrero Shake</h3>
+                            <p class="product-description">Indulgent and nutty, a luxurious Ferrero in every sip at Aristo.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Tiramisu Shake</h3>
+                            <p class="product-description">Classic dessert meets shake—Aristo's rich, coffee-kissed Tiramisu treat.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Brownie Shake</h3>
+                            <p class="product-description">Fudgy brownies and chilled milk—sweet comfort, Aristo-style.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Chocolate Shake</h3>
+                            <p class="product-description">The timeless chocolate milkshake—smooth, velvety, and always satisfying.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Biscoff Shake</h3>
+                            <p class="product-description">Caramelized cookie goodness whipped into a dreamy Aristo shake.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Nutella Nut Shake</h3>
+                            <p class="product-description">Hazelnut Nutella and crunchy nuts, blended for a creamy, nutty experience.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Oreo Shake</h3>
+                            <p class="product-description">Classic Oreo cookies crushed with milk—Aristo's ultimate cookies-and-cream classic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty Coolers Page -->
+            <div id="coolers-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Specialty Coolers & Spritzers</h2>
+                    <p class="category-description">Refreshing and unique beverages for a new experience</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Tropical Cooler</h3>
+                            <p class="product-description">A zesty blend of cranberry, orange, lemon, and chaat masala—Aristo's tropical escape in a glass.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1622597467836-f3285f2131b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Cranberry Apple Spritzer</h3>
+                            <p class="product-description">Cranberry and apple juices with grenadine and soda—Aristo's fruity, fizzy refreshment.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Blue Curacao</h3>
+                            <p class="product-description">Lively apple and lemon juices with blue curacao syrup and soda—Aristo's bold blue burst in every sip.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Raspberry Fizz</h3>
+                            <p class="product-description">A vibrant fusion of raspberry, apple, cranberry, lemon, ginger-lime, and grenadine—Aristo's bubbly berry sensation in a glass.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frappes Page -->
+            <div id="frappes-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Frappes Collection</h2>
+                    <p class="category-description">Creamy, frothy, and delicious coffee-based drinks</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Frappé</h3>
+                            <p class="product-description">A smooth and creamy vanilla frappé with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Caramel Frappé</h3>
+                            <p class="product-description">A rich and indulgent caramel frappé with a hint of coffee.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Frappé</h3>
+                            <p class="product-description">A vibrant and refreshing matcha frappé with a hint of mint.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Frappé</h3>
+                            <p class="product-description">A bold and intense espresso frappé with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Frappé</h3>
+                            <p class="product-description">A rich and creamy mocha frappé with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affogatos Page -->
+            <div id="affogatos-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Affogatos Collection</h2>
+                    <p class="category-description">A luxurious coffee experience with a twist</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Affogato</h3>
+                            <p class="product-description">A simple yet elegant affogato with a shot of espresso poured over a scoop of vanilla ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Affogato</h3>
+                            <p class="product-description">A bold and intense espresso affogato with a shot of espresso poured over a scoop of dark chocolate ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Affogato</h3>
+                            <p class="product-description">A refreshing matcha affogato with a shot of espresso poured over a scoop of matcha ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Affogato</h3>
+                            <p class="product-description">A rich and creamy mocha affogato with a shot of espresso poured over a scoop of dark chocolate ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Affogato</h3>
+                            <p class="product-description">A simple and elegant vanilla affogato with a shot of espresso poured over a scoop of vanilla ice cream.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cold Brew Page -->
+            <div id="coldbrew-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Cold Brew Collection</h2>
+                    <p class="category-description">Smooth, cold, and refreshing coffee for the summer season</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Cold Brew</h3>
+                            <p class="product-description">A smooth and robust cold brew coffee, perfect for a hot day.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Cold Brew</h3>
+                            <p class="product-description">A sweet and creamy vanilla cold brew with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Cold Brew</h3>
+                            <p class="product-description">A vibrant and refreshing matcha cold brew with a hint of mint.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Cold Brew</h3>
+                            <p class="product-description">A bold and intense espresso cold brew with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Cold Brew</h3>
+                            <p class="product-description">A rich and creamy mocha cold brew with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manual Brew Page -->
+            <div id="manual-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Manual Brew Collection</h2>
+                    <p class="category-description">Experience the art of coffee brewing at Aristo</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso</h3>
+                            <p class="product-description">A bold and intense shot of espresso for a quick pick-me-up.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Americano</h3>
+                            <p class="product-description">A classic espresso-based drink with hot water.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Cappuccino</h3>
+                            <p class="product-description">A creamy espresso-based drink with steamed milk and foam.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Latte</h3>
+                            <p class="product-description">A smooth and creamy espresso-based drink with steamed milk.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha</h3>
+                            <p class="product-description">A rich and creamy espresso-based drink with chocolate and steamed milk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aqua Blend Page -->
+            <div id="aquablend-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Aqua Blend Collection</h2>
+                    <p class="category-description">A refreshing blend of tea and coffee for a unique experience</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Aqua Blend</h3>
+                            <p class="product-description">A smooth and refreshing blend of coffee and tea with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Aqua Blend</h3>
+                            <p class="product-description">A sweet and creamy vanilla blend with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Aqua Blend</h3>
+                            <p class="product-description">A vibrant and refreshing matcha blend with a hint of mint.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Aqua Blend</h3>
+                            <p class="product-description">A bold and intense espresso blend with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Aqua Blend</h3>
+                            <p class="product-description">A rich and creamy mocha blend with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cold Coffee Page -->
+            <div id="coldcoffee-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Cold Coffee Collection</h2>
+                    <p class="category-description">A refreshing twist on your favorite hot coffee</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Cold Coffee</h3>
+                            <p class="product-description">A smooth and refreshing cold coffee, perfect for a hot day.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Cold Coffee</h3>
+                            <p class="product-description">A sweet and creamy vanilla cold coffee with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Cold Coffee</h3>
+                            <p class="product-description">A vibrant and refreshing matcha cold coffee with a hint of mint.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Cold Coffee</h3>
+                            <p class="product-description">A bold and intense espresso cold coffee with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Cold Coffee</h3>
+                            <p class="product-description">A rich and creamy mocha cold coffee with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hot Coffee Page -->
+            <div id="hotcoffee-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Hot Coffee Collection</h2>
+                    <p class="category-description">A warm and comforting selection of coffee drinks</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Espresso</h3>
+                            <p class="product-description">A bold and intense shot of espresso for a quick pick-me-up.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Americano</h3>
+                            <p class="product-description">A classic espresso-based drink with hot water.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Cappuccino</h3>
+                            <p class="product-description">A creamy espresso-based drink with steamed milk and foam.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Latte</h3>
+                            <p class="product-description">A smooth and creamy espresso-based drink with steamed milk.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha</h3>
+                            <p class="product-description">A rich and creamy espresso-based drink with chocolate and steamed milk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hot Chocolate Page -->
+            <div id="hotchocolate-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Hot Chocolate Collection</h2>
+                    <p class="category-description">A comforting and indulgent hot chocolate experience</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Hot Chocolate</h3>
+                            <p class="product-description">A smooth and creamy hot chocolate with a hint of vanilla.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Hot Chocolate</h3>
+                            <p class="product-description">A sweet and creamy vanilla hot chocolate with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Hot Chocolate</h3>
+                            <p class="product-description">A vibrant and refreshing matcha hot chocolate with a hint of mint.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Espresso Hot Chocolate</h3>
+                            <p class="product-description">A bold and intense espresso hot chocolate with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Mocha Hot Chocolate</h3>
+                            <p class="product-description">A rich and creamy mocha hot chocolate with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matcha Page -->
+            <div id="matcha-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Matcha Blends Collection</h2>
+                    <p class="category-description">A serene and refreshing selection of matcha-based drinks</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Matcha</h3>
+                            <p class="product-description">A smooth and earthy matcha powder blended with hot water.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Matcha</h3>
+                            <p class="product-description">A sweet and creamy vanilla matcha with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Latte</h3>
+                            <p class="product-description">A creamy matcha latte with steamed milk and foam.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Mocha</h3>
+                            <p class="product-description">A rich and creamy matcha mocha with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Matcha Cold Brew</h3>
+                            <p class="product-description">A bold and intense espresso matcha cold brew with a hint of chocolate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Iced Teas Page -->
+            <div id="icedteas-page" class="category-page" style="display: none;">
+                <div class="category-header">
+                    <button class="back-button" onclick="showMainMenu()">Back to Menu</button>
+                    <h2 class="category-page-title">Iced Teas Collection</h2>
+                    <p class="category-description">A refreshing selection of iced tea varieties</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Iced Tea</h3>
+                            <p class="product-description">A refreshing iced tea with a hint of lemon or berry.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Green Tea</h3>
+                            <p class="product-description">A soothing and refreshing green tea with a hint of honey.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Black Tea</h3>
+                            <p class="product-description">A robust and full-bodied black tea with a hint of lemon.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1569869812918-4c2d74c65fe5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Herbal Tea</h3>
+                            <p class="product-description">A soothing and calming herbal tea blend.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515823064-d6e0c04616a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Berry Tea</h3>
+                            <p class="product-description">A fruity and refreshing berry tea with a hint of honey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Coffee Story</h2>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>At Aristo Coffee and Cuisine, we believe that coffee is more than just a beverage – it's a culture, an art, and a way of bringing people together. Our specialty lies in crafting the perfect coffee experience, from bean to cup.</p>
+                    <br>
+                    <p>We source our beans from the finest coffee plantations around the world, ensuring that every cup delivers an exceptional taste that reflects our passion for quality and excellence.</p>
+                </div>
+                <div class="about-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Customers Daily</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Coffee Varieties</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Food Items</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-label">Customer Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Visit Us Today</h2>
+            <div class="contact-info">
+                <div class="contact-item animate-on-scroll">
+                    <h3>Address</h3>
+                    <p>301, White House<br>Opp. Swaminarayan Temple<br>Near Shyam Shikhar<br>Bapunagar, Ahmedabad - 382350</p>
+                </div>
+                <div class="contact-item animate-on-scroll">
+                    <h3>Hours</h3>
+                    <p>Open Daily<br>10:00 AM - 1:00 AM</p>
+                </div>
+                <div class="contact-item animate-on-scroll">
+                    <h3>Contact</h3>
+                    <p>Phone: <a href="tel:+919512258672" class="contact-link">+91 95122 58672</a><br>Email: <a href="mailto:info@thearistocafe.com" class="contact-link">info@thearistocafe.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hero Slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto slide every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Category Navigation
+        const mainMenu = document.getElementById('main-menu');
+        const categoryCards = document.querySelectorAll('.category-card');
+        const categoryPages = document.querySelectorAll('.category-page');
+        const backButtons = document.querySelectorAll('.back-button');
+
+        categoryCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.dataset.category;
+                showCategoryPage(category);
+            });
+        });
+
+        backButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                showMainMenu();
+            });
+        });
+
+        function showMainMenu() {
+            categoryPages.forEach(page => {
+                page.style.display = 'none';
+                page.classList.remove('active');
+            });
+            mainMenu.style.display = 'block';
+            mainMenu.classList.add('active');
+        }
+
+        function showCategoryPage(category) {
+            categoryPages.forEach(page => {
+                if (page.id === `${category}-page`) {
+                    page.style.display = 'block';
+                    page.classList.add('active');
+                } else {
+                    page.style.display = 'none';
+                    page.classList.remove('active');
+                }
+            });
+            mainMenu.style.display = 'none';
+            mainMenu.classList.remove('active');
+        }
+
+        // Initial call to show main menu
+        showMainMenu();
+    </script>
+</body>
+</html> 
