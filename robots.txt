@@ -1,0 +1,30 @@
+# Robots.txt for Aristo Coffee & Cuisine
+# https://thearistocafe.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://thearistocafe.com/sitemap.xml
+
+# Crawl-delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Block access to admin areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow access to CSS, JS, and image files for better rendering
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.ico$
+
+# SEO optimization for Aristo Coffee
+# Located in Bapunagar, Ahmedabad
+# Opposite Swaminarayan Temple, Near Shyam Shikhar
+# Premium coffee, mojitos, milkshakes, frappes 
