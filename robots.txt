@@ -1,4 +1,4 @@
-# Robots.txt for Aristo Coffee & Cuisine
+# Robots.txt for Aristo Cafe Bapunagar
 # https://thearistocafe.com/robots.txt
 
 User-agent: *
@@ -7,14 +7,14 @@ Allow: /
 # Sitemap location
 Sitemap: https://thearistocafe.com/sitemap.xml
 
-# Crawl-delay (optional - helps with server load)
+# Crawl-delay (optimal for premium cafe website)
 Crawl-delay: 1
 
-# Block access to admin areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
+# Allow access to menu data files for better indexing
+Allow: /aristo-menu.json
+Allow: /aristo-beverages.json
 
-# Allow access to CSS, JS, and image files for better rendering
+# Allow access to all media files for better rendering
 Allow: /*.css$
 Allow: /*.js$
 Allow: /*.jpg$
@@ -23,8 +23,23 @@ Allow: /*.png$
 Allow: /*.gif$
 Allow: /*.webp$
 Allow: /*.ico$
+Allow: /*.json$
+Allow: /*.svg$
 
-# SEO optimization for Aristo Coffee
-# Located in Bapunagar, Ahmedabad
-# Opposite Swaminarayan Temple, Near Shyam Shikhar
-# Premium coffee, mojitos, milkshakes, frappes 
+# Block unnecessary files to improve crawl efficiency
+Disallow: /*.txt$
+Disallow: /menu.txt
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /admin/
+Disallow: /temp/
+
+# SEO optimization for Aristo Cafe Bapunagar
+# 🏪 Business: Aristo Cafe - Premium Coffee and Cuisine
+# 📍 Location: 301, White House, Opp. Swaminarayan Temple, Near Shyam Shikhar, Bapunagar, Ahmedabad - 382350
+# ☕ Specialties: Premium Coffee, Pizza, Pasta, Burgers, Sandwiches, Cold Coffee, Hot Chocolate, Milkshakes
+# 🎯 Target Audience: Couples, Students, Families, Coffee Lovers, Food Enthusiasts
+# 💻 Features: Free WiFi, Study Friendly, Romantic Ambiance, Late Night Dining, Modern Cafe
+# 🕒 Hours: Open Daily 10:00 AM - 1:00 AM (Late Night Cafe)
+# 📞 Contact: +91 95122 58672
+# 🌟 Keywords: Best Cafe in Bapunagar, Premium Cafes Ahmedabad, Study Friendly Cafe, Romantic Cafe, Instagrammable Cafe 
