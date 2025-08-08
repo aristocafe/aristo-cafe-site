@@ -1,0 +1,489 @@
+{
+  "restaurant": "ARISTO CAFÉ MENU",
+  "beverages": [
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "CAPPUCCINO",
+      "price": "149"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "LATTE",
+      "price": "149"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "AMERICANO",
+      "price": "149"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "CLASSIC HOT CHOCOLATE",
+      "price": "219"
+    },
+    {
+      "category": "ICED TEA",
+      "item_name": "LEMON ICED TEA",
+      "price": "199"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "CLASSIC MOJITO",
+      "price": "229"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "OREO SHAKE",
+      "price": "329"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "KITKAT SHAKE",
+      "price": "310"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "FERRERO ROCHER SHAKE",
+      "price": "320"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "ICED LATTE",
+      "price": "279"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "ICED CAPPUCCINO ",
+      "price": "259"
+    },
+    {
+      "category": "ICED FRAPPES",
+      "item_name": "MOCHA FRAPPE",
+      "price": "149"
+    },
+    {
+      "category": "ICED FRAPPES",
+      "item_name": "KITKAT FRAPPE",
+      "price": "199"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "MOCHA ",
+      "price": "189"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "FLAT WHITE",
+      "price": "129"
+    },
+    {
+      "category": "COLD BREW",
+      "item_name": "ARISTO SPECIAL COLD BREW",
+      "price": "249"
+    },
+    {
+      "category": "CAFFIENE SHOTS",
+      "item_name": "ESPRESSO 30ML",
+      "price": "79"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "ICED AMERICANO",
+      "price": "149"
+    },
+    {
+      "category": "ICED TEA",
+      "item_name": "PEACH ICED TEA",
+      "price": "199"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "WATERMELON MOJITO",
+      "price": "249"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "NUTELLA NUT SHAKE",
+      "price": "339"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "LOTUS BISCOFF SHAKE",
+      "price": "349"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "NUTELLA - FLAVOURED HOT CHOCOLATE",
+      "price": "249"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "CARAMEL - FLAVOURED LATTE",
+      "price": "179"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "VANILLA - FLAVOURED LATTE",
+      "price": "179"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "ICED MOCHA",
+      "price": "279"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "BROWNIE SHAKE",
+      "price": "310"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "TIRAMISU SHAKE",
+      "price": "299"
+    },
+    {
+      "category": "ICED FRAPPES",
+      "item_name": "TIRAMISU FRAPPE",
+      "price": "159"
+    },
+    {
+      "category": "ICE CREAM FRAPPES",
+      "item_name": "KITKAT FRAPPE",
+      "price": "279"
+    },
+    {
+      "category": "ICE CREAM FRAPPES",
+      "item_name": "MOCHA FRAPPE",
+      "price": "229"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "CRANEBERRY MOJITO",
+      "price": "249"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "ORANGE MOJITO",
+      "price": "249"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "SALTED CARAMEL MOCHA",
+      "price": "199"
+    },
+    {
+      "category": "CAFFIENE SHOTS",
+      "item_name": "DOPPIO",
+      "price": "119"
+    },
+    {
+      "category": "CAFFIENE SHOTS",
+      "item_name": "ICED ESPRESSO ",
+      "price": "99"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "ICED LONG BLACK",
+      "price": "149"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "V60",
+      "price": "299"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "FRENCH PRESS",
+      "price": "299"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "CARAMEL ICED COFFEE",
+      "price": "249"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "ICED SPANISH LATTE",
+      "price": "249"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "CARAMEL - FLAVOURED HOT CHOCOLATE",
+      "price": "249"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "HAZELNUT - FLAVOURED HOT CHOCOLATE",
+      "price": "249"
+    },
+    {
+      "category": "ICED TEA",
+      "item_name": "CRANEBERRY ICED TEA",
+      "price": "199"
+    },
+    {
+      "category": "ICED TEA",
+      "item_name": "PASSION FRUIT ICED TEA",
+      "price": "199"
+    },
+    {
+      "category": "MILKSHAKES",
+      "item_name": "TRUFFLE CHOCOLATE CHIIPS SHAKE",
+      "price": "299"
+    },
+    {
+      "category": "AFFOGATO",
+      "item_name": "VANILLA AFFOGATO",
+      "price": "229"
+    },
+    {
+      "category": "ICED FRAPPES",
+      "item_name": "BROWNIE FRAPPE",
+      "price": "179"
+    },
+    {
+      "category": "ICED FRAPPES",
+      "item_name": "BISCOFF FRAPPE",
+      "price": "199"
+    },
+    {
+      "category": "ICE CREAM FRAPPES",
+      "item_name": "TIRAMISU FRAPPE",
+      "price": "219"
+    },
+    {
+      "category": "ICE CREAM FRAPPES",
+      "item_name": "BROWNIE FRAPPE",
+      "price": "259"
+    },
+    {
+      "category": "ICE CREAM FRAPPES",
+      "item_name": "BISCOFF FRAPPE",
+      "price": "279"
+    },
+    {
+      "category": "CAFFIENE SHOTS",
+      "item_name": "CORTADO",
+      "price": "139"
+    },
+    {
+      "category": "CAFFIENE SHOTS",
+      "item_name": "MACCHIATO",
+      "price": "139"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "VIETNAMESE ICED COFEE",
+      "price": "249"
+    },
+    {
+      "category": "COLD CUP OF JOE",
+      "item_name": "IRISH COLD ",
+      "price": "279"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "TIRAMISU - FLAVOURED LATTE",
+      "price": "179"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "HAZELNUT - FLAVOURED LATTE",
+      "price": "179"
+    },
+    {
+      "category": "WARM CUP OF JOE",
+      "item_name": "CINNAMON - FLAVOURED LATTE",
+      "price": "179"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "COCO FUSION",
+      "price": "229"
+    },
+    
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "CRANEBERRY ESPRESSO",
+      "price": "219"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "LITCHI ESPRESSSO",
+      "price": "219"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "ORANGE ESPRESSO",
+      "price": "219"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "TONIC ESPRESSO",
+      "price": "229"
+    },
+    {
+      "category": "AQUA CAFFEINE",
+      "item_name": "REDBULL ESPRESSO",
+      "price": "279"
+    },
+    {
+      "category": "COLD BREW",
+      "item_name": "CRANEBERRY - FLAVOURED COLD BREW",
+      "price": "279"
+    },
+    {
+      "category": "COLD BREW",
+      "item_name": "LITCHI - FLAVOURED COLD BREW",
+      "price": "279"
+    },
+    {
+      "category": "COLD BREW",
+      "item_name": "ORANGE - FLAVOURED COLD BREW",
+      "price": "279"
+    },
+    {
+      "category": "COLD BREW",
+      "item_name": "GUAVA - FLAVOURED COLD BREW",
+      "price": "279"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "50% DARK HOT CHOCOLATE",
+      "price": "229"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "TIRAMISU - FLAVOURED HOT CHOCOLATE",
+      "price": "249"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "SALTED CARAMEL - FLAVOURED HOT CHOCOLATE",
+      "price": "249"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "MARSHMELLOW HOT CHOCOLATE",
+      "price": "279"
+    },
+    {
+      "category": "HOT CHOCOLATE",
+      "item_name": "FRENCH AUTHENTIC HOT CHOCOLATE",
+      "price": "279"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "ICED MATCHA LATTE",
+      "price": "179"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "MATCHA LATTE HOT",
+      "price": "159"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "MATCHA MOJITO",
+      "price": "219"
+    },
+    {
+      "category": "AFFOGATO",
+      "item_name": "CINNAMON AFFOGATO",
+      "price": "239"
+    },
+    {
+      "category": "AFFOGATO",
+      "item_name": "NUTELLA AFFOGATO",
+      "price": "279"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "GREEN APPLE MOJITO",
+      "price": "249"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "CRANEBERRY ESPRESSO MOJITO",
+      "price": "299"
+    },
+    {
+      "category": "MOJITO",
+      "item_name": "MIDNIGHT MOJITO (BLUEBERRY)",
+      "price": "259"
+    },
+    {
+      "category": "MOCKTAIL",
+      "item_name": "TROPICAL FRUIT COOLER",
+      "price": "279"
+    },
+    {
+      "category": "MOCKTAIL",
+      "item_name": "CRANEBERRY APPLE SPRITZER",
+      "price": "249"
+    },
+    {
+      "category": "MOCKTAIL",
+      "item_name": "BLUE BRIDGE",
+      "price": "249"
+    },
+    {
+      "category": "MOCKTAIL",
+      "item_name": "RASPBERRY FIZ",
+      "price": "269"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "SYPHON",
+      "price": "299"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "AEROPRESS",
+      "price": "299"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "MOKA POT",
+      "price": "299"
+    },
+    {
+      "category": "MANUAL BREW",
+      "item_name": "CHEMEX",
+      "price": "299"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "MATCHA AFFAGATO",
+      "price": "219"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "COCONUT MATCHA FOAM",
+      "price": "269"
+    },
+    {
+      "category": "MATCHA BLENDS",
+      "item_name": "TONIC MATCHA",
+      "price": "229"
+    }
+  ],
+  "total_items": 90,
+  "categories": [
+    "MANUAL BREW",
+    "CAFFIENE SHOTS",
+    "AQUA CAFFEINE",
+    "COLD BREW",
+    "ICED FRAPPES",
+    "ICE CREAM FRAPPES",
+    "MILKSHAKES",
+    "COLD CUP OF JOE",
+    "WARM CUP OF JOE",
+    "HOT CHOCOLATE",
+    "MATCHA BLENDS",
+    "AFFOGATO",
+    "ICED TEA",
+    "MOJITO",
+    "MOCKTAIL"
+  ]
+} 

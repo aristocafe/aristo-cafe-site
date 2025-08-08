@@ -1,0 +1,257 @@
+{
+  "restaurant": "ARISTO CAFÉ FOOD MENU",
+  "menu": [
+    {
+      "no": "9",
+      "category": "SANDWICH",
+      "item_name": "CHEESE GRILLED SANDWICH",
+      "price": "229"
+    },
+    {
+      "no": "12",
+      "category": "SANDWICH",
+      "item_name": "PANNER TIKKA SANDWICH",
+      "price": "279"
+    },
+    {
+      "no": "20",
+      "category": "PIZZA",
+      "item_name": "MARGHERITA PIZZA",
+      "price": "429"
+    },
+    {
+      "no": "25",
+      "category": "PASTA",
+      "item_name": "ALFREDO PASTA (WHITE SAUCE)",
+      "price": "449"
+    },
+    {
+      "no": "31",
+      "category": "BURGER",
+      "item_name": "PERI PERI PANEER BURGER",
+      "price": "279"
+    },
+    {
+      "no": "32",
+      "category": "BURGER",
+      "item_name": "ARISTO CHEESY BURGER",
+      "price": "269"
+    },
+    {
+      "no": "2",
+      "category": "TOAST",
+      "item_name": "ROMA GARLIC TOAST (CHEESE GARLIC TOAST)",
+      "price": "239"
+    },
+    {
+      "no": "4",
+      "category": "TOAST",
+      "item_name": "CHEESE CHILLI TOAST",
+      "price": "249"
+    },
+    {
+      "no": "26",
+      "category": "PASTA",
+      "item_name": "ARRABIATA PASTA (RED SAUCE)",
+      "price": "439"
+    },
+    {
+      "no": "38",
+      "category": "FRIES",
+      "item_name": "CLASSIC SALTED FRIES",
+      "price": "220"
+    },
+    {
+      "no": "39",
+      "category": "FRIES",
+      "item_name": "PERI PERI FRIES",
+      "price": "239"
+    },
+    {
+      "no": "35",
+      "category": "TACOS",
+      "item_name": "PANEER BUTTER MASALA TACOS",
+      "price": "310"
+    },
+    {
+      "no": "18",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "CHEESY NACHOS ",
+      "price": "249"
+    },
+    {
+      "no": "15",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "BAGEL PIZZA",
+      "price": "278"
+    },
+    {
+      "no": "34",
+      "category": "BURGER",
+      "item_name": "SPECIAL ALOO TIKKI BURGER",
+      "price": "239"
+    },
+    {
+      "no": "10",
+      "category": "SANDWICH",
+      "item_name": "SPINACH CORN CHEESE SANDWICH",
+      "price": "249"
+    },
+    {
+      "no": "22",
+      "category": "PIZZA",
+      "item_name": "PERI PERI PANEER TIKKA PIZZA",
+      "price": "489"
+    },
+    {
+      "no": "19",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "MEXICAN NACHOS",
+      "price": "299"
+    },
+    {
+      "no": "40",
+      "category": "FRIES",
+      "item_name": "ARISTO CRINKLE CUT FRIES",
+      "price": "249"
+    },
+    {
+      "no": "33",
+      "category": "BURGER",
+      "item_name": "ARISTO VEGGIE BURGER",
+      "price": "249"
+    },
+    {
+      "no": "28",
+      "category": "PASTA",
+      "item_name": "PINK SAUCE PASTA",
+      "price": "499"
+    },
+    {
+      "no": "14",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "GARLIC CREAM CHEESE BAGEL",
+      "price": "249"
+    },
+    {
+      "no": "21",
+      "category": "PIZZA",
+      "item_name": "FARM FRESH PIZZA",
+      "price": "469"
+    },
+    {
+      "no": "13",
+      "category": "SANDWICH",
+      "item_name": "MUSHROOM SANDWICH",
+      "price": "289"
+    },
+    {
+      "no": "29",
+      "category": "PASTA",
+      "item_name": "AGLIO E OLIO SPAGHETTI",
+      "price": "429"
+    },
+    {
+      "no": "16",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "CREAMY CHEESY KOREAN BUN",
+      "price": "310"
+    },
+    {
+      "no": "30",
+      "category": "PASTA",
+      "item_name": "MAKE YOUR OWN SPAGHETTI",
+      "price": "479"
+    },
+    {
+      "no": "11",
+      "category": "SANDWICH",
+      "item_name": "SICILION PANINI SANDWICH [GRILLED VEGGIE PANINI )",
+      "price": "279"
+    },
+    {
+      "no": "27",
+      "category": "PASTA",
+      "item_name": "PESTO SAUCE PASTA",
+      "price": "479"
+    },
+    {
+      "no": "36",
+      "category": "TACOS",
+      "item_name": "MUSHROOM CORN & ONION TACOS",
+      "price": "349"
+    },
+    {
+      "no": "37",
+      "category": "FRIES",
+      "item_name": "VEGGIE SAUTTED CRINKLE FRIES",
+      "price": "349"
+    },
+    {
+      "no": "23",
+      "category": "PIZZA",
+      "item_name": "MUSHROOM FOREST PIZZA",
+      "price": "519"
+    },
+    {
+      "no": "5",
+      "category": "FOCACCIA",
+      "item_name": "CLASSIC HERB FOCACCIA",
+      "price": "259"
+    },
+    {
+      "no": "1",
+      "category": "TOAST",
+      "item_name": "TUSCAN SUNRISE TOAST (BRUSCHETTA)",
+      "price": "249"
+    },
+    {
+      "no": "8",
+      "category": "SANDWICH",
+      "item_name": "CAPRESE CROISSANT SANDWICH",
+      "price": "299"
+    },
+    {
+      "no": "24",
+      "category": "PIZZA",
+      "item_name": "DRAGON ON FIRE PIZZA",
+      "price": "549"
+    },
+    {
+      "no": "17",
+      "category": "ARISTO CLASSIC ",
+      "item_name": "MASHED AVOCADO BAGEL",
+      "price": "330"
+    },
+    {
+      "no": "3",
+      "category": "TOAST",
+      "item_name": "ARISTO AVOCADO TOAST",
+      "price": "279"
+    },
+    {
+      "no": "7",
+      "category": "FOCACCIA",
+      "item_name": "MEDITERRANEAN FOCACCIA SLICE (FOCACCIA TOAST)",
+      "price": "259"
+    },
+    {
+      "no": "6",
+      "category": "FOCACCIA",
+      "item_name": "HUMUIS ON FOCACCIA",
+      "price": "239"
+    }
+  ],
+  "total_items": 40,
+  "categories": [
+    "TOAST",
+    "FOCACCIA", 
+    "SANDWICH",
+    "ARISTO CLASSIC",
+    "PIZZA",
+    "PASTA",
+    "BURGER",
+    "TACOS",
+    "FRIES"
+  ]
+} 
