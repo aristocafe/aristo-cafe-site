@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://thearistocafe.com/sitemap.xml
+Sitemap: https://www.thearistocafe.com/sitemap.xml
 
 # Crawl-delay (optimal for premium cafe website)
 Crawl-delay: 1

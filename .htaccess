@@ -1,14 +1,16 @@
-# .htaccess for Aristo Coffee & Cuisine
-# https://thearistocafe.com
+# .htaccess for Aristo Cafe Bapunagar
+# https://www.thearistocafe.com
 
-# Force HTTPS redirect
+# Force HTTPS and WWW redirect (canonical URL)
 RewriteEngine On
+
+# Redirect HTTP to HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Force www (if preferred) - uncomment if you want www
-# RewriteCond %{HTTP_HOST} !^www\.
-# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Force WWW (canonical domain)
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove trailing slash (optional)
 RewriteCond %{REQUEST_FILENAME} !-d
