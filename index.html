@@ -55,9 +55,11 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -467,57 +469,15 @@
             border-radius: 35px;
             font-weight: 700;
             font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 6px 25px rgba(250, 247, 244, 0.6), 
-                        0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(250, 247, 244, 0.8), 
+                        0 4px 15px rgba(0, 0, 0, 0.3);
             text-shadow: none;
             letter-spacing: 0.8px;
             border: 2px solid var(--terracotta);
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            animation: floatPulse 3s ease-in-out infinite, slideUpBounce 1.2s ease-out 0.9s both;
-        }
-
-        @keyframes floatPulse {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-                box-shadow: 0 6px 25px rgba(250, 247, 244, 0.6), 
-                            0 3px 12px rgba(0, 0, 0, 0.2);
-            }
-            25% {
-                transform: translateY(-3px) scale(1.02);
-                box-shadow: 0 8px 30px rgba(250, 247, 244, 0.7), 
-                            0 4px 15px rgba(184, 92, 62, 0.2);
-            }
-            50% {
-                transform: translateY(-6px) scale(1.03);
-                box-shadow: 0 10px 35px rgba(250, 247, 244, 0.8), 
-                            0 5px 18px rgba(184, 92, 62, 0.3);
-            }
-            75% {
-                transform: translateY(-3px) scale(1.02);
-                box-shadow: 0 8px 30px rgba(250, 247, 244, 0.7), 
-                            0 4px 15px rgba(184, 92, 62, 0.2);
-            }
-        }
-
-        @keyframes slideUpBounce {
-            0% {
-                opacity: 0;
-                transform: translateY(40px) scale(0.8);
-            }
-            60% {
-                opacity: 1;
-                transform: translateY(-8px) scale(1.05);
-            }
-            80% {
-                transform: translateY(2px) scale(0.98);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
         }
 
         .cta-button::before {
@@ -560,13 +520,12 @@
         .cta-button:hover {
             background: var(--terracotta);
             color: var(--white);
-            transform: translateY(-8px) scale(1.08);
-            box-shadow: 0 15px 45px rgba(184, 92, 62, 0.6), 
-                        0 8px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(184, 92, 62, 0.6), 
+                        0 6px 20px rgba(0, 0, 0, 0.4);
             border: 2px solid var(--terracotta-light);
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-            animation: none;
         }
 
         .cta-button:active {
@@ -621,13 +580,7 @@
             height: 40px;
             background: linear-gradient(135deg, var(--terracotta-accent), var(--terracotta-light));
             border-radius: 50%;
-            animation: bounce 1.5s ease-in-out infinite;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         /* Section Styles */
@@ -1094,6 +1047,21 @@
                 letter-spacing: 0.8px;
             }
 
+            .hero-buttons {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .location-button {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+                letter-spacing: 0.8px;
+            }
+
+            .location-button:hover {
+                letter-spacing: 0.8px;
+            }
+
             .coffee-cup {
                 width: 200px;
                 height: 200px;
@@ -1146,6 +1114,20 @@
                 padding: 1rem 2rem;
                 font-size: 0.95rem;
                 letter-spacing: 0.6px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .location-button {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+                letter-spacing: 0.6px;
+                width: 100%;
+                text-align: center;
             }
 
             .about-content {
@@ -1246,6 +1228,94 @@
                 gap: 0.5rem !important;
             }
         }
+
+        /* Hero Buttons Container */
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Location Button */
+        .location-button {
+            font-family: 'Lato', sans-serif;
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            text-decoration: none;
+            border-radius: 35px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2), 
+                        0 4px 15px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            letter-spacing: 0.8px;
+            border: 2px solid var(--white);
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .location-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .location-button:hover::before {
+            left: 100%;
+        }
+
+        .location-button:hover::after {
+            width: 120%;
+            height: 300px;
+        }
+
+        .location-button:hover {
+            background: var(--white);
+            color: var(--terracotta);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.4), 
+                        0 6px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--terracotta-light);
+            letter-spacing: 1px;
+            text-shadow: none;
+        }
+
+        .location-button:active {
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.1s ease;
+        }
+
+        .location-button:focus {
+            outline: 3px solid var(--terracotta);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
@@ -1266,7 +1336,10 @@
             <div class="hero-text">
                 <h1>Welcome to <span class="highlight">Aristo</span><br>Coffee & Cuisine</h1>
                     <p>More than just coffee — it's a moment, a mood, a memory in every sip. Crafted with passion, served with warmth, and brewed to bring people together. Your perfect cup awaits</p>
-                    <a href="#products" class="cta-button" aria-label="Explore Aristo Coffee Menu">Explore Our Menu</a>
+                    <div class="hero-buttons">
+                        <a href="#products" class="cta-button" aria-label="Explore Aristo Coffee Menu">Explore Our Menu</a>
+                        <a href="https://www.google.com/maps/place/Aristo+coffee+%26+cuisine/@23.0386503,72.626294,17z/data=!3m1!4b1!4m6!3m5!1s0x395e87a44a7dd777:0x3cb66f636b014a9f!8m2!3d23.0386503!4d72.6288689!16s%2Fg%2F11xrspxqw1?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D" class="location-button" aria-label="Find us on Google Maps" target="_blank" rel="noopener noreferrer">Location</a>
+                    </div>
             </div>
             <!-- <div class="hero-image">
                 <div class="coffee-cup"></div>
@@ -1751,4 +1824,4 @@
         }, 1000);
     </script>
 </body>
-</html> 
+</html>

@@ -1,0 +1,36 @@
+{
+    "name": "Aristo Coffee and Cuisine",
+    "short_name": "Aristo Cafe",
+    "description": "Premium coffee shop and cuisine in Bapunagar, Ahmedabad. Best cafe near Swaminarayan Temple.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FAF7F4",
+    "theme_color": "#B85C3E",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "categories": ["food", "restaurants", "coffee"],
+    "lang": "en",
+    "dir": "ltr"
+} 
