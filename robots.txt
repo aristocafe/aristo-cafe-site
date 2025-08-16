@@ -36,7 +36,7 @@ Disallow: /temp/
 
 # SEO optimization for Aristo Cafe Bapunagar
 # 🏪 Business: Aristo Cafe - Premium Coffee and Cuisine
-# 📍 Location: 301, White House, Opp. Swaminarayan Temple, Near Shyam Shikhar, Bapunagar, Ahmedabad - 382350
+# 📍 Location: 301, White House, Near Shyam Shikhar, Bapunagar, Ahmedabad - 382350
 # ☕ Specialties: Premium Coffee, Pizza, Pasta, Burgers, Sandwiches, Cold Coffee, Hot Chocolate, Milkshakes
 # 🎯 Target Audience: Couples, Students, Families, Coffee Lovers, Food Enthusiasts
 # 💻 Features: Free WiFi, Study Friendly, Romantic Ambiance, Late Night Dining, Modern Cafe
