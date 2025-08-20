@@ -35,11 +35,11 @@ Disallow: /admin/
 Disallow: /temp/
 
 # SEO optimization for Aristo Cafe Bapunagar
-# 🏪 Business: Aristo Cafe - Premium Coffee and Cuisine
+# 🏪 Business: Aristo Cafe - Premium Cafe in Bapunagar
 # 📍 Location: 301, White House, Near Shyam Shikhar, Bapunagar, Ahmedabad - 382350
 # ☕ Specialties: Premium Coffee, Pizza, Pasta, Burgers, Sandwiches, Cold Coffee, Hot Chocolate, Milkshakes
 # 🎯 Target Audience: Couples, Students, Families, Coffee Lovers, Food Enthusiasts
 # 💻 Features: Free WiFi, Study Friendly, Romantic Ambiance, Late Night Dining, Modern Cafe
 # 🕒 Hours: Open Daily 10:00 AM - 1:00 AM (Late Night Cafe)
 # 📞 Contact: +91 95122 58672
-# 🌟 Keywords: Best Cafe in Bapunagar, Premium Cafes Ahmedabad, Study Friendly Cafe, Romantic Cafe, Instagrammable Cafe 
+# 🌟 Keywords: Best Cafe in Bapunagar, Premium Cafes Ahmedabad, Study Friendly Cafe, Romantic Cafe, Instagrammable Cafe , Cafe near me , best coffee in ahmedabad , aristo cafe Ahmedabad
