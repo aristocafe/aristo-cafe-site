@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>Aristo Cafe - Orders Tracking</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --terracotta: #B85C3E;
+            --terracotta-light: #C67A5B;
+            --terracotta-dark: #9A4A2F;
+            --terracotta-accent: #D4967A;
+            --white: #ffffff;
+            --cream: #FAF7F4;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .orders-header {
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .orders-header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .back-btn {
+            background: var(--white);
+            color: var(--terracotta);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        .orders-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .orders-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .filters-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .filters-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .filter-input, .filter-select {
+            padding: 0.8rem;
+            border: 2px solid var(--cream);
+            border-radius: 10px;
+            font-size: 1rem;
+            min-width: 150px;
+        }
+
+        .filter-input:focus, .filter-select:focus {
+            outline: none;
+            border-color: var(--terracotta);
+        }
+
+        .clear-filters-btn {
+            background: var(--warning);
+            color: var(--text-dark);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-filters-btn:hover {
+            background: #e0a800;
+        }
+
+        .orders-list {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .order-item {
+            border-bottom: 1px solid var(--cream);
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .order-item:hover {
+            background: var(--cream);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .order-info {
+            flex: 1;
+        }
+
+        .order-id {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+        }
+
+        .order-details {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .order-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-pending {
+            background: var(--warning);
+            color: var(--text-dark);
+        }
+
+        .status-preparing {
+            background: var(--info);
+            color: var(--white);
+        }
+
+        .status-ready {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .status-completed {
+            background: var(--text-light);
+            color: var(--white);
+        }
+
+        .order-items {
+            margin: 1rem 0;
+        }
+
+        .items-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .item-card {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--terracotta);
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            align-items: center;
+        }
+
+        .item-quantity {
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1rem;
+            min-width: 40px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(184, 92, 62, 0.3);
+        }
+
+        .item-price-details {
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .order-summary {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-row.total {
+            border-top: 2px solid var(--terracotta);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--terracotta);
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-preparing {
+            background: var(--info);
+            color: var(--white);
+        }
+
+        .btn-ready {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .btn-completed {
+            background: var(--text-light);
+            color: var(--white);
+        }
+
+        .btn-delete {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .empty-orders {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .empty-orders i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .orders-container {
+                padding: 1rem;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .filters-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .order-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .order-details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .items-list {
+                grid-template-columns: 1fr;
+            }
+
+            .order-actions {
+                flex-direction: column;
+            }
+
+            .item-quantity {
+                padding: 0.4rem 1rem;
+                font-size: 1.1rem;
+                min-width: 45px;
+            }
+
+            .item-price-details {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .order-age-info {
+            background: var(--warning);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .order-age-warning {
+            background: var(--danger);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <header class="orders-header">
+        <h1>📋 Orders Tracking - Aristo Cafe</h1>
+        <div class="header-actions">
+            <a href="adminaristo19.html" class="back-btn">← Back to Admin Panel</a>
+            <div>
+                <span id="totalOrders">0</span> Total Orders
+            </div>
+        </div>
+    </header>
+
+    <div class="orders-container">
+        <!-- Statistics -->
+        <div class="orders-stats">
+            <div class="stat-card">
+                <span class="stat-number" id="pendingOrders">0</span>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="preparingOrders">0</span>
+                <div class="stat-label">Preparing</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="readyOrders">0</span>
+                <div class="stat-label">Ready</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="completedOrders">0</span>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <h3>Filter Orders</h3>
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label class="filter-label">Date Range</label>
+                    <input type="date" class="filter-input" id="startDate">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">To</label>
+                    <input type="date" class="filter-input" id="endDate">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Table Number</label>
+                    <select class="filter-select" id="tableFilter">
+                        <option value="">All Tables</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Status</label>
+                    <select class="filter-select" id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="preparing">Preparing</option>
+                        <option value="ready">Ready</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">&nbsp;</label>
+                    <button class="clear-filters-btn" onclick="clearFilters()">Clear Filters</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-list" id="ordersList">
+            <div class="loading">Loading orders...</div>
+        </div>
+    </div>
+
+    <script>
+        let allOrders = [];
+        let filteredOrders = [];
+
+        // Load orders on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOrders();
+            setupFilters();
+        });
+
+        // Load orders from localStorage
+        function loadOrders() {
+            try {
+                const savedOrders = localStorage.getItem('aristo_orders');
+                allOrders = savedOrders ? JSON.parse(savedOrders) : [];
+                
+                // Clean old orders (older than 7 days)
+                allOrders = cleanOldOrders(allOrders);
+                
+                // Sort orders by timestamp (newest first)
+                allOrders.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                
+                filteredOrders = [...allOrders];
+                renderOrders();
+                updateStats();
+                
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                document.getElementById('ordersList').innerHTML = '<div class="error-message">Error loading orders</div>';
+            }
+        }
+
+        // Clean orders older than 7 days
+        function cleanOldOrders(orders) {
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+            
+            const filteredOrders = orders.filter(order => {
+                const orderDate = new Date(order.timestamp);
+                return orderDate > sevenDaysAgo;
+            });
+            
+            // If orders were deleted, update localStorage
+            if (filteredOrders.length !== orders.length) {
+                localStorage.setItem('aristo_orders', JSON.stringify(filteredOrders));
+                console.log(`Cleaned ${orders.length - filteredOrders.length} old orders (older than 7 days)`);
+            }
+            
+            return filteredOrders;
+        }
+
+        // Setup filter event listeners
+        function setupFilters() {
+            document.getElementById('startDate').addEventListener('change', filterOrders);
+            document.getElementById('endDate').addEventListener('change', filterOrders);
+            document.getElementById('tableFilter').addEventListener('change', filterOrders);
+            document.getElementById('statusFilter').addEventListener('change', filterOrders);
+            
+            // Populate table filter (only tables 1-10)
+            const tableFilter = document.getElementById('tableFilter');
+            const tables = [...new Set(allOrders.map(order => order.tableNumber))].sort((a, b) => a - b);
+            tables.forEach(table => {
+                if (table >= 1 && table <= 10) {
+                    const option = document.createElement('option');
+                    option.value = table;
+                    option.textContent = `Table ${table}`;
+                    tableFilter.appendChild(option);
+                }
+            });
+        }
+
+        // Filter orders
+        function filterOrders() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const tableFilter = document.getElementById('tableFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+
+            filteredOrders = allOrders.filter(order => {
+                const orderDate = new Date(order.timestamp).toISOString().split('T')[0];
+                
+                // Date filter
+                if (startDate && orderDate < startDate) return false;
+                if (endDate && orderDate > endDate) return false;
+                
+                // Table filter
+                if (tableFilter && order.tableNumber != tableFilter) return false;
+                
+                // Status filter
+                if (statusFilter && order.status !== statusFilter) return false;
+                
+                return true;
+            });
+
+            renderOrders();
+        }
+
+        // Clear filters
+        function clearFilters() {
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('tableFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            
+            filteredOrders = [...allOrders];
+            renderOrders();
+        }
+
+        // Render orders
+        function renderOrders() {
+            const ordersList = document.getElementById('ordersList');
+            
+            if (filteredOrders.length === 0) {
+                ordersList.innerHTML = `
+                    <div class="empty-orders">
+                        <div>📋</div>
+                        <h3>No orders found</h3>
+                        <p>No orders match your current filters</p>
+                    </div>
+                `;
+                return;
+            }
+
+            ordersList.innerHTML = filteredOrders.map(order => createOrderHTML(order)).join('');
+        }
+
+        // Create order HTML
+        function createOrderHTML(order) {
+            const itemsHTML = order.items.map(item => `
+                <div class="item-card">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-details">
+                        <span class="item-quantity">${item.quantity}</span>
+                        <span class="item-price-details">₹${item.price} × ${item.quantity} = ₹${item.price * item.quantity}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Calculate order age
+            const orderDate = new Date(order.timestamp);
+            const now = new Date();
+            const daysOld = Math.floor((now - orderDate) / (1000 * 60 * 60 * 24));
+            const daysLeft = 7 - daysOld;
+            
+            let ageInfo = '';
+            if (daysLeft <= 0) {
+                ageInfo = '<div class="order-age-info order-age-warning">⚠️ This order will be deleted soon (older than 7 days)</div>';
+            } else if (daysLeft <= 2) {
+                ageInfo = `<div class="order-age-info order-age-warning">⚠️ This order will be deleted in ${daysLeft} day${daysLeft > 1 ? 's' : ''}</div>`;
+            } else if (daysLeft <= 5) {
+                ageInfo = `<div class="order-age-info">ℹ️ This order will be deleted in ${daysLeft} days</div>`;
+            }
+
+            return `
+                <div class="order-item">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <div class="order-id">${order.orderId}</div>
+                            <div class="order-details">
+                                <span>Table ${order.tableNumber}</span>
+                                <span>${order.dateTime}</span>
+                                <span>₹${order.total.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <div class="order-status status-${order.status}">${order.status}</div>
+                    </div>
+                    
+                    <div class="order-items">
+                        <h4>Items:</h4>
+                        <div class="items-list">
+                            ${itemsHTML}
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>₹${order.subtotal.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>GST (5%):</span>
+                            <span>₹${order.gst.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>₹${order.total.toFixed(2)}</span>
+                        </div>
+                    </div>
+                    
+                    ${ageInfo}
+                    
+                    <div class="order-actions">
+                        ${order.status === 'pending' ? '<button class="action-btn btn-preparing" onclick="updateOrderStatus(\'' + order.orderId + '\', \'preparing\')">Start Preparing</button>' : ''}
+                        ${order.status === 'preparing' ? '<button class="action-btn btn-ready" onclick="updateOrderStatus(\'' + order.orderId + '\', \'ready\')">Mark Ready</button>' : ''}
+                        ${order.status === 'ready' ? '<button class="action-btn btn-completed" onclick="updateOrderStatus(\'' + order.orderId + '\', \'completed\')">Mark Completed</button>' : ''}
+                        <button class="action-btn btn-delete" onclick="deleteOrder('${order.orderId}')">Delete Order</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Update order status
+        function updateOrderStatus(orderId, newStatus) {
+            const orderIndex = allOrders.findIndex(order => order.orderId === orderId);
+            if (orderIndex !== -1) {
+                allOrders[orderIndex].status = newStatus;
+                localStorage.setItem('aristo_orders', JSON.stringify(allOrders));
+                
+                // Update filtered orders
+                const filteredIndex = filteredOrders.findIndex(order => order.orderId === orderId);
+                if (filteredIndex !== -1) {
+                    filteredOrders[filteredIndex].status = newStatus;
+                }
+                
+                renderOrders();
+                updateStats();
+                showSuccessMessage(`Order ${orderId} status updated to ${newStatus}`);
+            }
+        }
+
+        // Delete order
+        function deleteOrder(orderId) {
+            if (confirm('Are you sure you want to delete this order?')) {
+                allOrders = allOrders.filter(order => order.orderId !== orderId);
+                filteredOrders = filteredOrders.filter(order => order.orderId !== orderId);
+                
+                localStorage.setItem('aristo_orders', JSON.stringify(allOrders));
+                renderOrders();
+                updateStats();
+                showSuccessMessage(`Order ${orderId} deleted successfully`);
+            }
+        }
+
+        // Update statistics
+        function updateStats() {
+            const stats = {
+                total: allOrders.length,
+                pending: allOrders.filter(order => order.status === 'pending').length,
+                preparing: allOrders.filter(order => order.status === 'preparing').length,
+                ready: allOrders.filter(order => order.status === 'ready').length,
+                completed: allOrders.filter(order => order.status === 'completed').length
+            };
+
+            document.getElementById('totalOrders').textContent = stats.total;
+            document.getElementById('pendingOrders').textContent = stats.pending;
+            document.getElementById('preparingOrders').textContent = stats.preparing;
+            document.getElementById('readyOrders').textContent = stats.ready;
+            document.getElementById('completedOrders').textContent = stats.completed;
+        }
+
+        // Show success message
+        function showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.textContent = message;
+            
+            document.querySelector('.orders-container').insertBefore(successDiv, document.querySelector('.orders-container').firstChild);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

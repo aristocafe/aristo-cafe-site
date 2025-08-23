@@ -34,6 +34,11 @@ Disallow: /.htaccess
 Disallow: /admin/
 Disallow: /temp/
 
+# Block admin pages to prevent crawling of sensitive order data
+Disallow: /adminaristo19.html
+Disallow: /orderaristo19.html
+Disallow: /orders.json
+
 # SEO optimization for Aristo Cafe Bapunagar
 # 🏪 Business: Aristo Cafe - Premium Cafe in Bapunagar
 # 📍 Location: 301, White House, Near Shyam Shikhar, Bapunagar, Ahmedabad - 382350
