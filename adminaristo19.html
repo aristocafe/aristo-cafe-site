@@ -86,6 +86,8 @@
 
             .table-section {
                 order: 1;
+                display: block !important;
+                visibility: visible !important;
             }
 
             .menu-section {
@@ -105,9 +107,21 @@
                 padding: 0.8rem 0.5rem;
                 font-size: 0.9rem;
             }
+
+            .table-selection h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
         }
 
         .section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .table-section {
             background: var(--white);
             border-radius: 15px;
             padding: 2rem;
@@ -126,6 +140,12 @@
 
         /* Table Selection */
         .table-selection {
+            margin-bottom: 1rem;
+        }
+
+        .table-selection h3 {
+            color: var(--terracotta);
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
