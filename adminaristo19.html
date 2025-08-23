@@ -58,8 +58,23 @@
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 2rem;
+        }
+
+        .table-section {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .menu-section {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+        }
+
+        .cart-section {
+            grid-column: 2;
+            grid-row: 1 / span 2;
         }
 
         /* Mobile-first layout */
@@ -69,19 +84,26 @@
                 gap: 1rem;
             }
 
-            .cart-section {
-                grid-column: 1;
-                grid-row: auto;
-                order: 2;
+            .table-section {
+                order: 1;
             }
 
             .menu-section {
+                order: 2;
+            }
+
+            .cart-section {
                 order: 3;
             }
 
-            .table-selection {
-                order: 1;
-                margin-bottom: 1rem;
+            .table-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5rem;
+            }
+
+            .table-btn {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -104,7 +126,7 @@
 
         /* Table Selection */
         .table-selection {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .table-grid {
@@ -602,18 +624,21 @@
             </div>
         </div>
 
-        <!-- Cart Section -->
-        <div class="section cart-section">
-            <h2 class="section-title">🛒 Order Cart</h2>
-            
-            <!-- Table Selection -->
+        <!-- Table Selection Section -->
+        <div class="section table-section">
+            <h2 class="section-title">🪑 Table Selection</h2>
             <div class="table-selection">
                 <h3>Select Table:</h3>
                 <div class="table-grid" id="tableGrid">
                     <!-- Tables will be generated here -->
                 </div>
             </div>
+        </div>
 
+        <!-- Cart Section -->
+        <div class="section cart-section">
+            <h2 class="section-title">🛒 Order Cart</h2>
+            
             <!-- Cart Items -->
             <div class="cart-items" id="cartItems">
                 <div class="empty-cart">
