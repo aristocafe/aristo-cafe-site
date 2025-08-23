@@ -126,6 +126,9 @@
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
 
         .section-title {
@@ -704,7 +707,13 @@
         // Initialize tables (1-10)
         function initializeTables() {
             const tableGrid = document.getElementById('tableGrid');
+            if (!tableGrid) {
+                console.error('Table grid element not found!');
+                return;
+            }
+            
             tableGrid.innerHTML = '';
+            console.log('Initializing table grid...');
             
             for (let i = 1; i <= 10; i++) {
                 const tableBtn = document.createElement('button');
@@ -712,6 +721,16 @@
                 tableBtn.textContent = i;
                 tableBtn.onclick = () => selectTable(i);
                 tableGrid.appendChild(tableBtn);
+            }
+            
+            console.log(`Created ${tableGrid.children.length} table buttons`);
+            
+            // Ensure table section is visible
+            const tableSection = document.querySelector('.table-section');
+            if (tableSection) {
+                tableSection.style.display = 'block';
+                tableSection.style.visibility = 'visible';
+                tableSection.style.opacity = '1';
             }
         }
 
@@ -1232,9 +1251,31 @@
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('Initializing admin panel...');
             initializeTables();
             loadMenuData();
             updateTableButtons();
+            
+            // Ensure table section is visible
+            const tableSection = document.querySelector('.table-section');
+            if (tableSection) {
+                tableSection.style.display = 'block';
+                tableSection.style.visibility = 'visible';
+                console.log('Table section is visible');
+            } else {
+                console.error('Table section not found!');
+            }
+            
+            // Check table section visibility periodically
+            setInterval(() => {
+                const tableSection = document.querySelector('.table-section');
+                if (tableSection && (tableSection.style.display === 'none' || tableSection.style.visibility === 'hidden')) {
+                    console.log('Fixing table section visibility...');
+                    tableSection.style.display = 'block';
+                    tableSection.style.visibility = 'visible';
+                    tableSection.style.opacity = '1';
+                }
+            }, 1000);
         });
 
         // Keyboard shortcuts
