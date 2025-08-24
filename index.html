@@ -305,24 +305,24 @@
             width: 100%;
             height: 100%;
             z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-slides-container {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
         }
 
         .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            width: 25%;
             height: 100%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
+            flex-shrink: 0;
         }
 
         .hero-slide:nth-child(1) {
@@ -1001,10 +1001,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero {
-                background-attachment: scroll;
-            }
-
             .hero-slide {
                 background-attachment: scroll;
             }
@@ -1330,10 +1326,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-slideshow">
-            <div class="hero-slide active"></div>
-            <div class="hero-slide"></div>
-            <div class="hero-slide"></div>
-            <div class="hero-slide"></div>
+            <div class="hero-slides-container">
+                <div class="hero-slide"></div>
+                <div class="hero-slide"></div>
+                <div class="hero-slide"></div>
+                <div class="hero-slide"></div>
+            </div>
         </div>
         <div class="hero-content">
             <div class="hero-text">
@@ -1538,17 +1536,17 @@
 
         // Hero Slideshow
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const totalSlides = slides.length;
+        const slidesContainer = document.querySelector('.hero-slides-container');
+        const totalSlides = 4;
 
         function nextSlide() {
-            slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % totalSlides;
-            slides[currentSlide].classList.add('active');
+            const translateX = -currentSlide * 25; // Each slide is 25% width
+            slidesContainer.style.transform = `translateX(${translateX}%)`;
         }
 
-        // Auto slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        // Auto slide every 1.5 seconds
+        setInterval(nextSlide, 1500);
 
         // Scroll animations
         const observerOptions = {
