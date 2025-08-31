@@ -1,5 +1,6 @@
 # Robots.txt for Aristo Cafe Bapunagar
 # https://thearistocafe.com/robots.txt
+# Last Updated: 31 August 2025
 
 User-agent: *
 Allow: /
@@ -34,10 +35,7 @@ Disallow: /.htaccess
 Disallow: /admin/
 Disallow: /temp/
 
-# Block admin pages to prevent crawling of sensitive order data
-Disallow: /adminaristo19.html
-Disallow: /orderaristo19.html
-Disallow: /orders.json
+
 
 # SEO optimization for Aristo Cafe Bapunagar
 # 🏪 Business: Aristo Cafe - Premium Cafe in Bapunagar
@@ -47,4 +45,4 @@ Disallow: /orders.json
 # 💻 Features: Free WiFi, Study Friendly, Romantic Ambiance, Late Night Dining, Modern Cafe
 # 🕒 Hours: Open Daily 10:00 AM - 1:00 AM (Late Night Cafe)
 # 📞 Contact: +91 95122 58672
-# 🌟 Keywords: Best Cafe in Bapunagar, Premium Cafes Ahmedabad, Study Friendly Cafe, Romantic Cafe, Instagrammable Cafe , Cafe near me , best coffee in ahmedabad , aristo cafe Ahmedabad
+# 🌟 Keywords (Priority Order): Aristo, Aristo Cafe, Aristo Cafe Bapunagar, Aristo Cafe Ahmedabad, Cafe Near Me, Aristo Cafe Restaurant, Restaurant Near Me, Restaurant in Bapunagar, Aristo Cafe Photos, Aristo Cafe Menu, Best Cafe in Bapunagar, Premium Cafes Ahmedabad, Study Friendly Cafe, Romantic Cafe, Instagrammable Cafe
