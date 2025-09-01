@@ -4,33 +4,41 @@
   <!-- Homepage - Aristo | Aristo Cafe | Aristo Cafe Bapunagar | Aristo Cafe Ahmedabad -->
   <url>
     <loc>https://www.thearistocafe.com/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Hero Section - Aristo Cafe Welcome Page -->
-  <url>
+  <!-- <url>
     <loc>https://www.thearistocafe.com/#home</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
+  </url> -->
   
   <!-- Menu Section - Aristo Cafe Restaurant | Aristo Cafe Photos | Aristo Cafe Menu -->
-  <url>
+  <!-- <url>
     <loc>https://www.thearistocafe.com/#products</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
+  </url> -->
   
   <!-- About Section - Aristo Cafe Bapunagar | Restaurant in Bapunagar Story -->
-  <url>
-    <loc>https://www.thearistocafe.com/#about</loc>
-    <lastmod>2025-08-31</lastmod>
+  <!-- <url> -->
+    <!-- <loc>https://www.thearistocafe.com/#about</loc>
+    <lastmod>2025-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+   -->
+  <!-- Gallery Page - Aristo Cafe Photos | Aristo Cafe Interior | Aristo Cafe Gallery -->
+  <url>
+    <loc>https://www.thearistocafe.com/gallery.html</loc>
+    <lastmod>2025-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   
 </urlset> 
