@@ -1,6 +1,6 @@
 # Robots.txt for Aristo Cafe Bapunagar
-# https://thearistocafe.com/robots.txt
-# Last Updated: 31 August 2025
+# https://www.thearistocafe.com/robots.txt
+# Last Updated: 6 January 2025
 
 User-agent: *
 Allow: /
@@ -32,7 +32,6 @@ Disallow: /*.txt$
 Disallow: /menu.txt
 Disallow: /.git/
 Disallow: /.htaccess
-Disallow: /admin/
 Disallow: /temp/
 
 
